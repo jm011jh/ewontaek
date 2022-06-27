@@ -1,15 +1,12 @@
 (function () {
     // get all data in form and return object
     const emailForm = document.getElementById("emailForm")
+    const inputTel = document.getElementById("tel")
+    const inputMessage = document.getElementById("message")
+    const byteCount = document.getElementById("byte-count")
+    const byteCountMax = document.getElementById("max-byte-count")
+    inputMessage.addEventListener("keyup",checkByte);
 
-    console.log(emailForm.elements[5].name)
-    emailForm.elements.forEach(function(el,idx){
-        if(this.name === "tel"){
-            this.addEventListener("oninput",function(){
-                
-            })
-        }
-    })
     function getFormData(form) {
         var elements = form.elements;
         var honeypot;

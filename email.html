@@ -23,7 +23,8 @@
             <!--text-area-->
             <fieldset class="pure-group">
                 <label for="messsage">메세지: </label>
-                <textarea id="messsage" name="message" rows="10"></textarea>
+                <textarea id="messsage" name="message" cols="30" rows="10"></textarea>
+                <span id="byte-cont"></span><span id="max-byte-count"></span>
             </fieldset>
 
             <!--menu-->
@@ -41,7 +42,7 @@
             <!--tel-->
             <fieldset class="pure-group">
                 <label for="tel">연락처</label>
-                <input id="tel" type="tel" name="tel" value="" />
+                <input id="tel" type="tel" name="tel" value="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="11" minlength="8"/>
             </fieldset>
 
             <!--submit/button-->
