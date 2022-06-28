@@ -1,0 +1,36 @@
+.s1--container{padding-top: 240px;padding-bottom: 330px;}
+.s1--row1{width: 100%;display: flex;}
+.s1--text1,.s1--text2,.s1--text3{width: 50%;}
+.s1--text1{font-size: 120px;line-height:0.95;font-weight: 300;letter-spacing: -0.02em;display: flex;align-items: flex-start;}
+.s1--text1 p.small{font-size: 20px;opacity: 0.72;letter-spacing: -0.05em;line-height: 1.2;margin-left: 1em;}
+.s1--text1 p.small span{font-weight: 400;}
+.s1--text1 span.hangul{font-weight: 400;}
+.s1--text1 span:nth-child(2){opacity: 0.3;}
+.s1--text2{font-size: 40px;font-weight: 300;line-height: 1.3;letter-spacing: -0.05em;display: flex;align-items: flex-start;padding-left: 10px;}
+.s1--text2 span{font-weight: 400;}
+
+.s1--row2{display: flex;justify-content: flex-end;margin-top: 40px;}
+.s1--text3{font-size: 16px;font-weight: 300;padding-left: 10px;}
+
+#sect2{padding-bottom: 400px;}
+
+.swiper{position: static;}
+.swiper-wrapper{position: static;}
+.swiper-slide{display: flex;align-items: center;}
+.swiper-pagination-progressbar {position: static;}
+.swiper-horizontal > .swiper-pagination-progressbar{margin-top: 48px;height: 2px;}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{background-color: #333;}
+.swiper-button-wrap{display: flex;justify-content: flex-end;}
+.s2swiper-button-prev{margin-right: 12px;}
+.s2swiper-button-next,.s2swiper-button-prev{position: relative;padding: 20px;background-color: #333;}
+.s2swiper-button-next span, .s2swiper-button-prev span{width: 20px;height: 20px;display: block;}
+.s2swiper-button-next span{border-top: 2px solid #fff;border-right: 2px solid #fff;transform:translate(-4px, 0px) rotate(45deg);}
+.s2swiper-button-prev span{border-top: 2px solid #fff;border-left: 2px solid #fff;transform:translate(4px, 0px) rotate(-45deg);}
+.s2_bg{width: 690px;height: 420px;background-size: cover;}
+.s2_bg1{background-image: url(../image/s2_bg1.jpeg);}
+.s2_bg2{background-image: url(../image/s2_bg2.jpeg);}
+.s2_bg3{background-image: url(../image/s2_bg3.jpeg);}
+.s2_bg4{background-image: url(../image/s2_bg4.jpeg);}
+.s2_textBox{margin-left: 20px;width: 490px;font-weight: 300;}
+.s2_text1{font-size: 40px;}
+.s2_text2{font-size: 16px;margin-top: 2em;line-height: 1.5;}

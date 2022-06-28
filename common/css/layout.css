@@ -1,0 +1,32 @@
+custom-nav{width: 100%;background-color: #fff;position: fixed;top: 0;}
+#sect0{padding-top: 104px;}
+.nav--wrap{width: 100%;display: flex;justify-content: space-between;align-items: center;padding: 40px 40px;margin: auto;max-width: 1080px;}
+.nav--ham-wrap{position: relative;}
+.nav--ham-button{width: 40px;height: 30px;position: absolute;top: 50%;right: 0px;cursor: pointer;padding: 4px 0;transform: translate(0,-50%);}
+.nav--ham-button span{width: 100%;height: 3px;background-color: #000;display: block;position: absolute;right: 0;transition-duration: 0.3s;transition-property: top bottom transform;}
+.nav--ham-button span:nth-child(1){top:4px;}
+.nav--ham-button span:nth-child(2){top:50%;transform: translate(0,-50%);}
+.nav--ham-button span:nth-child(3){bottom: 4px;}
+
+.aside--container{width: 100%;height: 100%;background-color: rgba(0,0,0,0);position: fixed;top: 0;left: 0;display: flex;justify-content: flex-end;pointer-events: none;overflow: hidden;transition-duration:0.6s; opacity: 0;transition-property: opacity background-color;}
+.aside--wrap{width: 50%;height: 100%;background-color: rgba(255,255,255,1);padding:0 60px;transform: translate(100%,0);transition: 0.6s transform;display: flex;flex-direction: column;justify-content: space-between;}
+.aside--list{padding-top: 180px;font-size: 60px;}
+.aside--list li{display: flex;}
+.aside--list li:not(:last-child){margin-bottom: calc(1em / 3);}
+.aside--list li a{font-weight: 500;display: inline-block;padding: 12px 0;line-height: 0.85;transition:0.3s transform;}
+.aside--list li a:hover{transform: translate(0.5em,0);}
+.aside--list li a span{display: block;position: absolute;left: 0;bottom:0;opacity:0;width: 100%;height: 4px;background-color: #000;transition: 0.3s opacity;}
+.aside--list li a:hover span{opacity: 1;}
+
+.aside--text{padding-bottom: 60px;color: #333333;}
+.aside--text-email{font-size: 16px;}
+.aside--text-address{font-size: 16px;margin: 12px 0;padding-bottom: 20px; display: inline-block;font-weight: 500;}
+.aside--text-phone{font-size: 18px;}
+
+
+.is-open .aside--container{background-color: rgba(0,0,0,0.3);opacity: 1;}
+.is-open .aside--container{pointer-events: unset;}
+.is-open .aside--wrap{transform: translate(0,0);}
+.is-open .nav--ham-button span:nth-child(1){transform:translate(0,-50%) rotate(45deg) ; top: 50%;}
+.is-open .nav--ham-button span:nth-child(2){transform: scaleX(0);}
+.is-open .nav--ham-button span:nth-child(3){transform:translate(0,50%) rotate(-45deg); bottom: 50%;}

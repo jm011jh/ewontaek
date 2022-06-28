@@ -3,10 +3,29 @@
     const emailForm = document.getElementById("emailForm")
     const inputTel = document.getElementById("tel")
     const inputMessage = document.getElementById("message")
-    const byteCount = document.getElementById("byte-count")
-    const byteCountMax = document.getElementById("max-byte-count")
+    console.log(inputMessage)
     inputMessage.addEventListener("keyup",checkByte);
+    var message = '';
+    var max_message_byte = 600;
 
+    function count(message){
+        var totalByte = 0;
+        for(var index = 0, length = message.length; index < length; index++){
+            var currentByte = message.charCodeAt(index);
+            (currentByte>128) ? totalByte += 2 : totalByte++;
+        }
+        return totalByte;
+    }
+    function checkByte(event){
+        const totalByte = count(event.target.value);
+
+        if(totalByte <= max_message_byte){
+            message = event.target.value;
+        }else{
+            alert("300자 까지 전송가능합니다.")
+            event.target.value = message;
+        }
+    }
     function getFormData(form) {
         var elements = form.elements;
         var honeypot;
