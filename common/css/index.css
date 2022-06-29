@@ -42,7 +42,7 @@
 .s3--container{display: flex;position: relative;border-top: 1px solid rgba(0,0,0,0.08);border-bottom: 1px solid rgba(0,0,0,0.08);justify-content: center;}
 .s3--titleBox,.s3--list{width: 50%;}
 .s3--titleBox{position: sticky;top: 0;height: 100vh;display: flex;flex-direction: column;justify-content: center;padding: 0 40px;width: 50%;max-width: 800px;}
-.s3--title-text1{font-size: 60px;font-weight: 400;margin-bottom: 1em;}
+.s3--title-text1{font-size: 80px;font-weight: 400;margin-bottom: 0.2em;}
 .s3--title-text2{font-size: 24px;font-weight: 300;}
 .s3--title-text2 .hanja{opacity: 0.3;font-weight: 300;}
 .s3--title-text2 .korea{font-weight: 400;}
