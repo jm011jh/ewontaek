@@ -3,6 +3,85 @@ var menuLink = ["about", "service", "contact", "office"]
 const email = "test@test.com"
 const address = "수원시 영통구 광교중앙로 248번길 7-3<br>우연법전프라자 701호"
 const phone = "010-2473-1275"
+const copyRight = "Copyright © 2022. 법률사무소 예원 All right reserved."
+const companyInfo = {
+    title : "예원법률사무소",
+    email : "이메일 : test@test.com",
+    address : "주소 : 수원시 영통구 광교중앙로 248번길 7-3 우연법전프라자 701호",
+    phone : "전화 : 010-2473-1275",
+    person : "대표 변호사 : 이원택"
+}
+const snsInfo = {
+    naver : "http://blog.naver.com/lawyewon",
+}
+
+async function makeFooter() {
+
+    let footerPromise = new Promise(function(resolve,reject){
+        class CustomFooter extends HTMLElement {
+            connectedCallback() {
+
+                let container = document.createElement("div")
+                container.classList.add("footer--container")
+                this.appendChild(container)
+
+                let wrap = document.createElement("div")
+                wrap.classList.add("footer--wrap")
+                wrap.classList.add("public--wrap")
+                container.appendChild(wrap)
+
+                let textBox = document.createElement("div")
+                textBox.classList.add("footer--textBox")
+                wrap.appendChild(textBox)
+
+                for(let key in companyInfo){
+                    let thisKey = String(key);
+                    let thisValue = String(companyInfo[key])
+                    let thisBox = document.createElement("div")
+                    let thisText = document.createElement("p")
+                    thisBox.classList.add(`footer--${thisKey}`)
+                    thisText.innerHTML = thisValue
+                    thisBox.appendChild(thisText)
+                    textBox.appendChild(thisBox)
+                }
+
+                let copyBox = document.createElement("div")
+                let copyText = document.createElement("p")
+                copyText.innerHTML = copyRight
+                copyBox.classList.add("footer--copyRight")
+                copyText.classList.add("public--wrap")
+                copyBox.appendChild(copyText)
+                this.appendChild(copyBox)
+
+                let snsBox = document.createElement("div")
+                snsBox.classList.add("footer--snsBox")
+                for(let key in snsInfo){
+                    let thisKey = String(key);
+                    let thisValue = String(snsInfo[key])
+
+                    let thisA = document.createElement("a")
+                    thisA.setAttribute("href",thisValue)
+                    thisA.setAttribute("target","blank")
+                    snsBox.appendChild(thisA)
+                    let thisImg = document.createElement("img")
+                    thisImg.setAttribute("src",`./common/image/icon_${thisKey}.png`)
+                    thisImg.setAttribute("alt",`move to ${thisKey} sns link`)
+                    thisA.appendChild(thisImg)
+                }
+                wrap.appendChild(snsBox)
+            }
+        }
+        resolve(CustomFooter)
+    })
+    try {
+        var footer = await footerPromise;
+        customElements.define("custom-footer",footer)
+    } catch {
+        console.log("error foot")
+    }
+
+}
+makeFooter();
 
 async function makeNav() {
 
@@ -35,7 +114,7 @@ async function makeNav() {
                 asideList.classList.add("aside--list")
                 asideWrap.appendChild(asideList)
 
-                for (let i = 0; i <= 3; i++) {
+                for (let i = 0; i < menuLink.length; i++) {
                     let asideListSpan = document.createElement("span")
                     let asideListItem = document.createElement("li")
                     let asideListItemA = document.createElement("a")
@@ -57,6 +136,7 @@ async function makeNav() {
                     asideEmail.classList.add("aside--text-email")
                     asideEmail.innerHTML = email
                     asideText.appendChild(asideEmail)
+                    
                     let asideAddress = document.createElement("p")
                     asideAddress.classList.add("aside--text-address")
                     asideAddress.innerHTML = address

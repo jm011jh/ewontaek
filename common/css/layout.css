@@ -1,4 +1,7 @@
 custom-nav{width: 100%;background-color: #fff;position: fixed;top: 0;}
+/* custom-nav.dropShadow{box-shadow: 0px 1px 6px rgba(0,0,0,0.08);} */
+custom-nav{opacity: 0;transform:translate(0,-10px);transition-duration: 0.3s;pointer-events: none;}
+custom-nav.is-show{opacity: 1;transform: translate(0,0);pointer-events: unset;}
 #sect0{padding-top: 104px;}
 .nav--wrap{width: 100%;display: flex;justify-content: space-between;align-items: center;padding: 40px 40px;margin: auto;max-width: 1080px;}
 .nav--ham-wrap{position: relative;}
@@ -18,9 +21,9 @@ custom-nav{width: 100%;background-color: #fff;position: fixed;top: 0;}
 .aside--list li a span{display: block;position: absolute;left: 0;bottom:0;opacity:0;width: 100%;height: 4px;background-color: #000;transition: 0.3s opacity;}
 .aside--list li a:hover span{opacity: 1;}
 
-.aside--text{padding-bottom: 60px;color: #333333;}
+.aside--text{padding-bottom: 60px;color: #333333;font-weight: 300;}
 .aside--text-email{font-size: 16px;}
-.aside--text-address{font-size: 16px;margin: 12px 0;padding-bottom: 20px; display: inline-block;font-weight: 500;}
+.aside--text-address{font-size: 16px;margin: 12px 0;padding-bottom: 20px; display: inline-block;}
 .aside--text-phone{font-size: 18px;}
 
 
@@ -30,3 +33,19 @@ custom-nav{width: 100%;background-color: #fff;position: fixed;top: 0;}
 .is-open .nav--ham-button span:nth-child(1){transform:translate(0,-50%) rotate(45deg) ; top: 50%;}
 .is-open .nav--ham-button span:nth-child(2){transform: scaleX(0);}
 .is-open .nav--ham-button span:nth-child(3){transform:translate(0,50%) rotate(-45deg); bottom: 50%;}
+
+.footer--container{border-top: 1px solid rgba(0,0,0,0.08);padding:60px 0;text-align: center;}
+.footer--container p{line-height: 1;font-weight: 300;}
+
+.footer--textBox div:not(:last-child) p{margin-bottom: 0.5em;}
+.footer--textBox div:last-child p{margin-top: 1em;}
+.footer--title{font-size: 22px;padding: 2em 0;}
+.footer--email{font-size: 16px;color: #333333;margin-bottom: 1em;}
+.footer--address{font-size: 14px;}
+.footer--phone{font-size: 14px;}
+.footer--person{font-size: 14px;}
+.footer--snsBox{display: flex;margin: auto;justify-content: center;margin-top: 40px;}
+.footer--snsBox a img{width: 40px;filter: grayscale(1);transition-duration: 0.2s;}
+.footer--snsBox a:hover img{filter: grayscale(0);}
+
+.footer--copyRight{padding: 20px 0;font-weight: 300;font-size: 11px;color: rgba(0,0,0,0.72);border-top: 1px solid rgba(100, 100, 100, 0.1);}
