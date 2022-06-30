@@ -1,8 +1,7 @@
 (function () {
     // get all data in form and return object
-    const emailForm = document.getElementById("emailForm")
-    const inputTel = document.getElementById("tel")
     const inputMessage = document.getElementById("message")
+    const menu = document.getElementById("menu");
     console.log(inputMessage)
     inputMessage.addEventListener("keyup",checkByte);
     var message = '';
@@ -76,41 +75,84 @@
         return { data: formData, honeypot: honeypot };
     }
     function handleFormSubmit(event) {  // handles form submit without any jquery
-        event.preventDefault();           // we are submitting via xhr below
-        var form = event.target;
-        var formData = getFormData(form);
-        var data = formData.data;
+        const nameVal = document.getElementById("name").value
+        const messageVal = document.getElementById("message").value
+        const telVal = document.getElementById("tel").value
+        const agreeVal = document.getElementById("agreeCheck").checked
+        const menuVal = menu.value
+        event.preventDefault();
+        
+        var name_sw = false;
+        var message_sw = false;
+        var tel_sw = false;
+        var check_sw = false;
+        var menu_sw = false;
 
-        // If a honeypot field is filled, assume it was done so by a spam bot.
-        if (formData.honeypot) {
-            return false;
-        }
+        if(nameVal == ""){
+            console.log("the name is empty")
+            name_sw = false;
+        }else{name_sw = true;}
 
-        disableAllButtons(form);
-        var url = form.action;
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', url);
-        // xhr.withCredentials = true;
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                form.reset();
-                var formElements = form.querySelector(".form-elements")
-                if (formElements) {
-                    // formElements.style.display = "none";
-                     // hide form
-                }
-                var thankYouMessage = document.querySelector(".thankyou_message");
-                if (thankYouMessage) {
-                    thankYouMessage.style.display = "block";
-                }
+        if(messageVal == ""){
+            console.log("the message is empty")
+            message_sw = false;
+        }else{message_sw = true;}
+
+        if(telVal == ""){
+            console.log("the tel is empty")
+            tel_sw = false;
+        }else{tel_sw = true;}
+
+        if(menuVal == "basic"){
+            console.log("choice the option")
+            menu_sw = false;
+        }else{menu_sw = true;}
+
+        if(!agreeVal){
+            console.log("check box is not checked")
+            check_sw = false;
+        }else{check_sw = true;}
+                   // we are submitting via xhr below
+        if(name_sw == true && message_sw == true && tel_sw == true && check_sw == true){
+    
+    
+            var form = event.target;
+            var formData = getFormData(form);
+            var data = formData.data;
+    
+            // If a honeypot field is filled, assume it was done so by a spam bot.
+            if (formData.honeypot) {
+                return false;
             }
-        };
-        // url encode form data for sending as post data
-        var encoded = Object.keys(data).map(function (k) {
-            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-        }).join('&');
-        xhr.send(encoded);
+    
+            disableAllButtons(form);
+            var url = form.action;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', url);
+            // xhr.withCredentials = true;
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    form.reset();
+                    var formElements = form.querySelector(".form-elements")
+                    if (formElements) {
+                        // formElements.style.display = "none";
+                         // hide form
+                    }
+                    var popupSuccess = document.querySelector(".contact--bnr-success");
+                    if (popupSuccess) {
+                        popupSuccess.style.display = "block";
+                    }
+                }
+            };
+            // url encode form data for sending as post data
+            var encoded = Object.keys(data).map(function (k) {
+                return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+            }).join('&');
+            xhr.send(encoded);
+        }else{
+            console.log("these are some empty...")
+        }
     }
 
     function loaded() {

@@ -1,5 +1,6 @@
-var menuList = ["예원소개", "업무분야", "온라인상담", "오시는길"]
+var menuList = ["예원소개", "업무분야", "상담문의", "오시는길"]
 var menuLink = ["about", "service", "contact", "office"]
+
 const email = "test@test.com"
 const address = "수원시 영통구 광교중앙로 248번길 7-3<br>우연법전프라자 701호"
 const phone = "010-2473-1275"
@@ -194,7 +195,7 @@ $(window).scroll(function(){
     if(Math.abs(lastScrollTop - scrollTop) <= delta) // 스크롤 값을 받아서 ~
     return; // ~ 리턴
 
-    if ((scrollTop > lastScrollTop) && (lastScrollTop>0)) {
+    if ((scrollTop > lastScrollTop) && (lastScrollTop>100)) {
         $("custom-nav").removeClass("is-show");
         $("custom-nav").removeClass("is-open");
     } else {

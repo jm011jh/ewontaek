@@ -1,9 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+TC:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@300;400;500;700;900&display=swap');
-
-*{padding: 0;margin: 0;box-sizing: border-box;font-family: 'Noto Sans KR', sans-serif;word-break: keep-all;}
+@import url('../font/pretendard.css');
+@import url('../font/pretendard-subset.css');
+*{padding: 0;margin: 0;box-sizing: border-box;font-family: 'Pretendard', sans-serif;word-break: keep-all;}
 li{list-style: none;}
 a:visited{color: unset;text-decoration: unset;}
 a{color: unset;text-decoration: unset;}
 
 .hanja{font-family: 'Noto Serif TC', serif;}
 .public--wrap{max-width: 1680px;padding: 0 40px;margin: auto;}
+.public--wrap-small{max-width: 1280px;padding: 0 40px;margin: auto;}
+
+.bnr-sect{width: 100%;position: relative;}
+.bnr--bg{width: 100%;height: 100%;padding-top: 330px;background-size: cover;background-position: center center;background-repeat: no-repeat;filter: brightness(0.72);}
+
+.bnr-contact{background-image: url(../image/bnr_contact.png);}
+
+.bnr--title{font-weight: 500;font-size: 40px;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);color: white;}
+.sub--title{padding-top: 120px;padding-bottom: 80px;border-bottom: 1px solid rgba(0,0,0,0.1);}
+.sub--title-text{font-size: 32px;}
+.sub--explain{font-size: 18px;font-weight: 300;color: rgba(0,0,0,0.72);margin-top: 60px;margin-bottom: 40px;line-height: 1.5;}
+.sub--explain b{font-weight: 500;color: #000;}
