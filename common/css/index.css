@@ -16,7 +16,7 @@
 #sect2 .public--wrap{position: relative;}
 .swiper{position: static;}
 .swiper-wrapper{position: static;}
-.swiper-slide{display: flex;align-items: center;opacity: 0;background-color: rgba(248,248,253,1);}
+.swiper-slide{display: flex;align-items: center;opacity: 0;background-color: rgba(250,250,253,1);}
 
 .swiper-slide-active{opacity:1}
 .swiper-pagination-progressbar {position: static;}
@@ -29,7 +29,7 @@
 .s2swiper-button-next span{border-top: 2px solid #fff;border-right: 2px solid #fff;transform:translate(-4px, 0px) rotate(45deg);}
 .s2swiper-button-prev span{border-top: 2px solid #fff;border-left: 2px solid #fff;transform:translate(4px, 0px) rotate(-45deg);}
 
-.s2--color{position: absolute;width: 50%;height: 100%;top: 0;right: 0;background-color: rgba(248,248,253,1);}
+.s2--color{position: absolute;width: 50%;height: 100%;top: 0;right: 0;background-color: rgba(250,250,253,1);}
 .s2--bg{width: 890px;height: 520px;background-size: cover;background-position: top center;}
 .s2--bg1{background-image: url(../image/s2_bg1.jpeg);}
 .s2--bg2{background-image: url(../image/s2_bg2.jpeg);}
