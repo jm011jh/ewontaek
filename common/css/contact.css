@@ -15,6 +15,7 @@ form select{
     appearance: none;
 }
 option{background-color: #fff;}
+#sect1{position: relative;}
 .s1--container{padding-bottom: 180px;}
 
 .form-notice{padding: 12px;border: 1px solid rgba(0,0,0,0.1);height: 200px;overflow-y: scroll;font-size: 14px;}
