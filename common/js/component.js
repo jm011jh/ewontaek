@@ -1,20 +1,22 @@
 var menuList = ["예원소개", "업무분야", "상담문의", "오시는길"]
 var menuLink = ["about", "service", "contact", "office"]
 
-const email = "test@test.com"
+const email = "lawyewon@naver.com"
 const address = "수원시 영통구 광교중앙로 248번길 7-3<br>우연법전프라자 701호"
 const phone = "010-2473-1275"
 const copyRight = "Copyright © 2022. 법률사무소 예원 All right reserved."
 const companyInfo = {
     title : "예원법률사무소",
-    email : "이메일 : test@test.com",
+    person : "대표 변호사 : 이원택",
+    bsNumber : "사업자번호 : 271-13-01862",
     address : "주소 : 수원시 영통구 광교중앙로 248번길 7-3 우연법전프라자 701호",
+    email : "이메일 : lawyewon@naver.com",
     phone : "전화 : 010-2473-1275",
-    person : "대표 변호사 : 이원택"
 }
 const snsInfo = {
     naver : "http://blog.naver.com/lawyewon",
 }
+// const businessNumber = "271-13-01862"
 
 async function makeFooter() {
 
@@ -30,6 +32,23 @@ async function makeFooter() {
                 wrap.classList.add("footer--wrap")
                 wrap.classList.add("public--wrap")
                 container.appendChild(wrap)
+
+                let snsBox = document.createElement("div")
+                snsBox.classList.add("footer--snsBox")
+                for(let key in snsInfo){
+                    let thisKey = String(key);
+                    let thisValue = String(snsInfo[key])
+
+                    let thisA = document.createElement("a")
+                    thisA.setAttribute("href",thisValue)
+                    thisA.setAttribute("target","blank")
+                    snsBox.appendChild(thisA)
+                    let thisImg = document.createElement("img")
+                    thisImg.setAttribute("src",`./common/image/icon_${thisKey}.png`)
+                    thisImg.setAttribute("alt",`move to ${thisKey} sns link`)
+                    thisA.appendChild(thisImg)
+                }
+                wrap.appendChild(snsBox)
 
                 let textBox = document.createElement("div")
                 textBox.classList.add("footer--textBox")
@@ -53,23 +72,6 @@ async function makeFooter() {
                 copyText.classList.add("public--wrap")
                 copyBox.appendChild(copyText)
                 this.appendChild(copyBox)
-
-                let snsBox = document.createElement("div")
-                snsBox.classList.add("footer--snsBox")
-                for(let key in snsInfo){
-                    let thisKey = String(key);
-                    let thisValue = String(snsInfo[key])
-
-                    let thisA = document.createElement("a")
-                    thisA.setAttribute("href",thisValue)
-                    thisA.setAttribute("target","blank")
-                    snsBox.appendChild(thisA)
-                    let thisImg = document.createElement("img")
-                    thisImg.setAttribute("src",`./common/image/icon_${thisKey}.png`)
-                    thisImg.setAttribute("alt",`move to ${thisKey} sns link`)
-                    thisA.appendChild(thisImg)
-                }
-                wrap.appendChild(snsBox)
             }
         }
         resolve(CustomFooter)

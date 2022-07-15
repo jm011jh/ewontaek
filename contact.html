@@ -21,47 +21,43 @@
         <div class="bnr--title"><p>상담문의</p></div>
     </div>
     <div class="sub--title">
-        <div class="sub--title-text public--wrap-small">이메일문의</div>
+        <div class="sub--title-text">이메일문의</div>
     </div>
     <div id="sect1">
         <div class="s1--container">
             <div class="public--wrap-small">
                 <div class="sub--explain"><p>하단의 항목을 전부 기입하신 후<br><b>상담문의</b> 버튼을 클릭해주세요.</p></div>
                 <div class="s1--contents">
-                    <form id="emailForm" class="gform" method="POST" data-email="lix_woals@naver.com" action="https://script.google.com/macros/s/AKfycbxCmIA_wDxfuRgv8gpMd9Qz7Dcj0wiXVCkjnVbRvpjWoEfhzubY8Hdt2wbXVgTanvO2/exec">
+                    <form id="emailForm" class="gform" method="POST" action="https://script.google.com/macros/s/AKfycbzv8UNteEefKiAQPvROjG1mRx6RwQ8L0HbqWZg3vEQJtv0OeN0Kc_9KH3NhJ3tTYezr/exec">
                         <div class="form-elements">
-                
                             <!--text-field-->
                             <fieldset class="pure-group">
-                                <label for="name">이름</label>
-                                <input id="name" name="name" />
+                                <label for="name">이름<span class="ng" id="nameNg">이름이 입력되지 않았습니다.</span></label>
+                                <input id="name" name="name" placeholder="이름을 입력해주세요"/>
                             </fieldset>
-                
                             <!--text-area-->
                             <fieldset class="pure-group">
-                                <label for="message">메세지<span>(최대 300자)</span></label>
-                                <textarea id="message" name="message" cols="30" rows="10"></textarea>
+                                <label for="message">메세지<span>(최대 300자)</span><span class="ng" id="messageNg">메세지가 입력되지 않았습니다.</span></label>
+                                <textarea id="message" name="message" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
                                 <span id="byte-count"></span><span id="max-byte-count"></span>
                             </fieldset>
-                
                             <!--menu-->
                             <fieldset class="pure-group">
-                                <label for="menu">분야</label>
+                                <label for="menu">분야 <span class="ng" id="menuNg">분야를 선택하지 않았습니다.</span></label>
                                 <select class="selectBox" id="menu" name="menu">
                                     <option value="basic" selected>(분야를 선택해주세요)</option>
-                                    <option value="choice">민사</option>
-                                    <option value="choice">형사</option>
-                                    <option value="choice">가사</option>
-                                    <option value="choice">에이전트</option>
-                                    <option value="choice">기타</option>
+                                    <option value="민사">민사</option>
+                                    <option value="형사">형사</option>
+                                    <option value="가사">가사</option>
+                                    <option value="에이전트">에이전트</option>
+                                    <option value="기타">기타</option>
                                 </select>
                             </fieldset>
                             <!--tel-->
                             <fieldset class="pure-group">
-                                <label for="tel">연락처</label>
-                                <input id="tel" type="tel" name="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="11" minlength="8"/>
+                                <label for="tel">연락처 <span class="ng" id="telNg">연락처가 입력되지 않았습니다.</span></label>
+                                <input placeholder="핸드폰 혹은 유선전화 번호를 입력해주세요" id="tel" type="tel" name="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="11" minlength="8"/>
                             </fieldset>
-                
                             <!-- notive -->
                             <p class="form-notice-text">개인정보 처리방침</p>
                             <div class="form-notice">
@@ -190,6 +186,7 @@
                                 <input type="checkbox" id="agreeCheck" name="agreeCheck">
                                 <label for="agreeCheck">개인정보 수집 및 이용에 동의합니다.</label>
                             </div>
+                            <span class="ng" id="checkNg">개인정보 처리방침에 동의해주세요.</span>
                             <!--submit/button-->
                             <button id="submit" class="button-success pure-button button-xlarge form--send-btn">상담문의</button>
                         </div>

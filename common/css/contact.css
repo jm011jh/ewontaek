@@ -5,6 +5,9 @@ form fieldset{display: flex;flex-direction: column;}
 form fieldset:not(:last-child){margin-bottom: 40px;}
 form label{font-size: 20px;margin-bottom: 12px;}
 form label span{font-size: 14px;margin-left: 0.5em;color: rgba(0,0,0,0.3);}
+form span.ng{font-size: 14px;margin-left: 0.5em;color: rgba(255, 64, 0, 0.9);display: none;}
+form span#checkNg{margin-left: 0;margin-top: 1em;}
+form span.ng-show{display: inline-block;}
 
 form select, form textarea, form input{border: 1px solid rgba(0,0,0,0.1);padding: 12px;}
 form select{font-size: 16px;}
@@ -31,7 +34,7 @@ option{background-color: #fff;}
 .s1--info{margin-top: 40px;width: calc(50% - 40px);}
 .s1--info li{display: flex;align-items: center;}
 .s1--info li:not(:last-child){margin-bottom: 40px;}
-.s1--info li img{width: 48px;display: block;margin-right: 24px;}
+.s1--info li img{width: 48px;display: block;margin-right: 24px;opacity: 0.8;}
 .s1--info li p{line-height: 1;}
 .s1--info-text p:nth-child(1){font-size: 20px;margin-bottom: 0.5em;font-weight: 400;}
 .s1--info-text p:nth-child(2){font-size: 16px;font-weight: 300;}
@@ -44,3 +47,48 @@ option{background-color: #fff;}
 .contact--bnr-success-wrap a{font-size: 16px;color: #333;border-top: 1px solid rgba(0,0,0,0.1);display: block;text-align: center;padding: 12px;cursor: pointer;transition-duration: 0.2s;}
 .contact--bnr-success-wrap a:hover{color: #fefefe;background-color: #333;}
 
+.office--wrap{display: flex;flex-direction: row;}
+.office--map-container{width: 50%;height: 100%;}
+.office--text-container{width: 50%;background-color: rgba(250,250,253,1);padding:60px 20px 40px 40px;display: flex;flex-direction: column;justify-content: space-between;}
+.office--text-wrap .office--text1{margin-bottom: 1em;line-height: 1;}
+.office--text1{font-size: 32px;font-weight: 500;}
+.office--text2{font-size: 18px;font-weight: 300;line-height: 1.5;margin-bottom: 0.5em;}
+.office--text3{font-size: 16px;font-weight: 300;}
+.office--text4{font-size: 18px;font-weight: 500;margin-top: 1.5em;display: flex;align-items: center;line-height: 1;margin-bottom: 1em;}
+.office--text4 span{background-color: #D31145;color: #fff;padding:6px 8px;border-radius:24px;margin-right: 0.5em;font-size: 16px;}
+
+.office--button-wrap{display: flex;flex-wrap: wrap;}
+.office--button-wrap a{display: flex;padding: 14px 18px;font-size: 16px;align-items: center;line-height: 1;font-weight: 700;}
+.office--button-wrap a img{display: block;width: 22px;margin-right: 8px;}
+.office--map-naver a{background-color: #2db400;color: #ffffff;margin-right: 12px;border: 1px solid #fff;margin-bottom: 12px;}
+.office--map-daum a{background-color: #f6e10c;color: #333333;border: 1px solid #f6e10c;}
+
+.s1--container .root_daum_roughmap{width: 100%;height: 500px;}
+.s1--container .root_daum_roughmap .wrap_map{width: 100%;height: 100%;}
+.s1--container .root_daum_roughmap .wrap_controllers{display: none;}
+
+@media all and (max-width:767px){
+    .s1--container{padding-bottom: 80px;}
+    .s1--contents{flex-direction: column;}
+    form{width: 100%;padding-right: 0;border-right: 0px solid #fff;padding-bottom: 80px;border-bottom: 1px solid #efefef;}
+    form fieldset:not(:last-child){margin-bottom: 24px;}
+    form label{font-size: 16px;}
+    form select{font-size: 14px;}
+    .form--send-btn{font-size: 16px;margin-top: 60px;}
+    .s1--info{width: 100%;margin-top: 40px;}
+    .s1--info li:not(:last-child){margin-bottom: 24px;}
+    .s1--info li img{width: 30px;margin-right: 16px;}
+    .s1--info-text p:nth-child(1){font-size: 16px;}
+    .s1--info-text p:nth-child(2){font-size: 14px;}
+    .office--wrap{flex-direction: column;}
+    .office--map-container{width: 100%;}
+    .office--text-container{width: 100%;padding: 40px 20px;}
+    .office--button-wrap a{padding: 10px 12px;font-size: 14px;}
+    .office--button-wrap a img{width: 16px;}
+    .office--text1{font-size: 24px;}
+    .office--text2{font-size: 16px;}
+    .office--text3{font-size: 14px;}
+    .office--text4{font-size: 14px;}
+    .office--text4 span{font-size: 14px;}
+
+}

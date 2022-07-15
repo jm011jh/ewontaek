@@ -23,21 +23,39 @@
         </div>
     </div>
     <div class="sub--title">
-        <div class="sub--title-text public--wrap-small">오시는 길</div>
+        <div class="sub--title-text">오시는 길</div>
     </div>
     <div id="sect1">
         <div class="s1--container">
-            <div class="public--wrap-small">
-                <div id="daumRoughmapContainer1656654559571" class="root_daum_roughmap root_daum_roughmap_landing" style="width:100%;height: 100vh;"></div>
-                <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-                <script charset="UTF-8">
-                    new daum.roughmap.Lander({
-                        "timestamp": "1656654559571",
-                        "key": "2ata9",
-                        "mapWidth": "",
-                        "mapHeight": "",
-                    }).render();
-                </script>
+            <div class="public--wrap-small office--wrap">
+                <div class="office--map-container">
+                    <div id="daumRoughmapContainer1656654559571" class="root_daum_roughmap root_daum_roughmap_landing"
+                        style="width:100%;"></div>
+                    <script charset="UTF-8" class="daum_roughmap_loader_script"
+                        src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+                    <script charset="UTF-8">
+                        new daum.roughmap.Lander({
+                            "timestamp": "1656654559571",
+                            "key": "2ata9",
+                            "mapWidth": "",
+                            "mapHeight": "",
+                        }).render();
+                    </script>
+                </div>
+                <div class="office--text-container">
+                    <div class="office--text-wrap">
+                        <p class="office--text1">우연법전프라자</p>
+                        <p class="office--text2">수원시 영통구 광교중앙로 248번길 7-3<br> 우연법전프라자 701호</p>
+                        <p class="office--text3">T. 010-2473-1275</p>
+                        <p class="office--text3">F. 031-548-4381</p>
+                        <p class="office--text3">E. lawyewon@naver.com</p>
+                        <p class="office--text4"><span>신분당선</span>상현역 2번 출구 도보 15분</p>
+                    </div>
+                    <div class="office--button-wrap">
+                        <div class="office--map-naver"><a href="https://naver.me/IIZBvyVg" target="blank"><img src="/common/image/icon_naver_white.png" alt=""><p>네이버 지도</p></a></div>
+                        <div class="office--map-daum"><a href="http://kko.to/8RmAJHSk5" target="blank"><img src="/common/image/icon_map_kakao_small.png" alt=""><p>카카오 지도</p></a></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -45,7 +63,7 @@
     <custom-nav class="is-show"></custom-nav>
     <script src="./common/js/component.js"></script>
     <!-- <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script> -->
-    <script data-cfasync="false" type="text/javascript" src="./common/js/mail.js"></script>
+    <!-- <script data-cfasync="false" type="text/javascript" src="./common/js/mail.js"></script> -->
 </body>
 
 </html>

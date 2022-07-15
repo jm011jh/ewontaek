@@ -2,7 +2,7 @@
     // get all data in form and return object
     const inputMessage = document.getElementById("message")
     const menu = document.getElementById("menu");
-    console.log(inputMessage)
+    
     inputMessage.addEventListener("keyup",checkByte);
     var message = '';
     var max_message_byte = 600;
@@ -80,6 +80,13 @@
         const telVal = document.getElementById("tel").value
         const agreeVal = document.getElementById("agreeCheck").checked
         const menuVal = menu.value
+
+        //"입력안됨" 문구들
+        const nameNg = document.getElementById("nameNg")
+        const messageNg = document.getElementById("messageNg")
+        const menuNg = document.getElementById("menuNg")
+        const telNg = document.getElementById("telNg")
+        const checkNg = document.getElementById("checkNg")
         event.preventDefault();
         
         var name_sw = false;
@@ -88,31 +95,39 @@
         var check_sw = false;
         var menu_sw = false;
 
+        //"입력안됨"문구들 초기화
+        nameNg.classList.remove("ng-show")
+        messageNg.classList.remove("ng-show")
+        menuNg.classList.remove("ng-show")
+        telNg.classList.remove("ng-show")
+        checkNg.classList.remove("ng-show")
+        //"입력항목"하나씩 체크 후 만족하지 못할 경우 "입력안됨" 출력
         if(nameVal == ""){
-            console.log("the name is empty")
+            nameNg.classList.add("ng-show")
             name_sw = false;
         }else{name_sw = true;}
 
         if(messageVal == ""){
-            console.log("the message is empty")
+            messageNg.classList.add("ng-show")
             message_sw = false;
         }else{message_sw = true;}
 
         if(telVal == ""){
-            console.log("the tel is empty")
+            telNg.classList.add("ng-show")
             tel_sw = false;
         }else{tel_sw = true;}
 
         if(menuVal == "basic"){
-            console.log("choice the option")
+            menuNg.classList.add("ng-show")
             menu_sw = false;
         }else{menu_sw = true;}
 
         if(!agreeVal){
-            console.log("check box is not checked")
+            checkNg.classList.add("ng-show")
             check_sw = false;
         }else{check_sw = true;}
-                   // we are submitting via xhr below
+        // we are submitting via xhr below
+        //모든 입력항목값의 조건 만족 시 이하 실행
         if(name_sw == true && message_sw == true && tel_sw == true && check_sw == true){
     
     

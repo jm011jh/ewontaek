@@ -6,9 +6,9 @@ li{list-style: none;}
 a:visited{color: unset;text-decoration: unset;}
 a{color: unset;text-decoration: unset;}
 
-.hanja{font-family: 'Noto Serif TC', serif;}
+.hanja{font-family: 'Noto Serif TC', serif;transform: translate(0,-12%);}
 .public--wrap{max-width: 1680px;padding: 0 40px;margin: auto;}
-.public--wrap-small{max-width: 1280px;padding: 0 40px;margin: auto;}
+.public--wrap-small{max-width: 1360px;padding: 0 40px;margin: auto;margin-top: 80px;}
 
 .bnr-sect{width: 100%;position: relative;}
 .bnr--bg{width: 100%;height: 100%;padding-top: 330px;background-size: cover;background-position: center center;background-repeat: no-repeat;filter: brightness(0.72);}
@@ -16,7 +16,24 @@ a{color: unset;text-decoration: unset;}
 .bnr-contact{background-image: url(../image/bnr_contact.png);}
 
 .bnr--title{font-weight: 500;font-size: 40px;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);color: white;}
-.sub--title{padding-top: 120px;padding-bottom: 80px;border-bottom: 1px solid rgba(0,0,0,0.1);}
-.sub--title-text{font-size: 32px;}
+.sub--title{padding-left:40px;padding-right:40px;padding-top: 120px;padding-bottom: 80px;border-bottom: 1px solid rgba(0,0,0,0.1);max-width: 1280px;margin: auto;}
+.sub--title-text{font-size: 32px;max-width: 1200px;margin: auto;text-align: center;}
 .sub--explain{font-size: 18px;font-weight: 300;color: rgba(0,0,0,0.72);margin-top: 60px;margin-bottom: 40px;line-height: 1.5;}
 .sub--explain b{font-weight: 500;color: #000;}
+
+@media all and (max-width:767px){
+
+    .bnr--bg{padding-top: 180px;}
+    .bnr--title{font-size: 24px;}
+    .sub--title{padding-top: 40px;}
+    .sub--title{padding-bottom: 24px;}
+    .sub--title-text{font-size: 20px;}
+    .public--wrap-small{margin-top: 60px;}
+    .sub--explain{font-size: 16px;}
+}
+@media all and (max-width:480px){
+    .sub--title{padding-right: 20px;padding-left: 20px;}
+    .public--wrap{padding: 0 20px;}
+    .public--wrap-small{padding: 0 20px;}
+
+}
